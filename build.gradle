@@ -74,7 +74,7 @@ dependencyManagement {
 }
 
 bootBuildImage {
-	imageName = "csgeear/${project.name}:${project.version}"
+	imageName = "csgear/${project.name}:${project.version}"
 	environment = ["BP_JVM_VERSION": "17.*"]
 
 	docker {

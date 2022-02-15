@@ -1,6 +1,9 @@
-package com.vkeonline.bookshop.catalogservice.domain;
+package com.vkeonline.bookstore.catalogservice.domain;
 
-import com.vkeonline.bookstore.catalogservice.domain.*;
+import com.vkeonline.bookstore.catalogservice.exception.BookAlreadyExistsException;
+import com.vkeonline.bookstore.catalogservice.exception.BookNotFoundException;
+import com.vkeonline.bookstore.catalogservice.repository.BookRepository;
+import com.vkeonline.bookstore.catalogservice.service.BookService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

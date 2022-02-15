@@ -1,4 +1,4 @@
-package com.vkeonline.bookstore.catalogservice.domain;
+package com.vkeonline.bookstore.catalogservice.exception;
 
 public class BookAlreadyExistsException extends RuntimeException {
 

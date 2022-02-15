@@ -1,6 +1,5 @@
-package com.vkeonline.bookshop.catalogservice.domain;
+package com.vkeonline.bookstore.catalogservice.domain;
 
-import com.vkeonline.bookstore.catalogservice.domain.Book;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 

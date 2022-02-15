@@ -1,7 +1,7 @@
 package com.vkeonline.bookstore.catalogservice.demo;
 
 import com.vkeonline.bookstore.catalogservice.domain.Book;
-import com.vkeonline.bookstore.catalogservice.domain.BookRepository;
+import com.vkeonline.bookstore.catalogservice.repository.BookRepository;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.annotation.Profile;
 import org.springframework.context.event.EventListener;

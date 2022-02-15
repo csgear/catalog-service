@@ -1,17 +1,19 @@
-package com.vkeonline.bookstore.catalogservice.domain;
+package com.vkeonline.bookstore.catalogservice.service;
 
+import com.vkeonline.bookstore.catalogservice.domain.Book;
+import com.vkeonline.bookstore.catalogservice.exception.BookAlreadyExistsException;
+import com.vkeonline.bookstore.catalogservice.exception.BookNotFoundException;
+import com.vkeonline.bookstore.catalogservice.repository.BookRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
 @Service
+@AllArgsConstructor
 public class BookService {
 
     private final BookRepository bookRepository;
-
-    public BookService(BookRepository bookRepository) {
-        this.bookRepository = bookRepository;
-    }
 
     public Iterable<Book> viewBookList() {
         return bookRepository.findAll();
@@ -23,8 +25,8 @@ public class BookService {
     }
 
     public Book addBookToCatalog(Book book) {
-        if (bookRepository.existsByIsbn(book.isbn())) {
-            throw new BookAlreadyExistsException(book.isbn());
+        if (bookRepository.existsByIsbn(book.getIsbn())) {
+            throw new BookAlreadyExistsException(book.getIsbn());
         }
         return bookRepository.save(book);
     }
@@ -41,18 +43,16 @@ public class BookService {
         if (existingBook.isEmpty()) {
             return addBookToCatalog(book);
         }
-        Book bookToUpdate = new Book(
-                existingBook.get().id(),
-                existingBook.get().isbn(),
-                book.title(),
-                book.author(),
-                book.price(),
-                book.publisher(),
-                existingBook.get().createdDate(),
-                existingBook.get().lastModifiedDate(),
-                existingBook.get().createdBy(),
-                existingBook.get().lastModifiedBy(),
-                existingBook.get().version());
+        var bookToUpdate = new Book(
+                existingBook.get().getId(),
+                existingBook.get().getIsbn(),
+                book.getTitle(),
+                book.getAuthor(),
+                book.getPrice(),
+                book.getPublisher(),
+                existingBook.get().getCreatedDate(),
+                existingBook.get().getLastModifiedDate(),
+                existingBook.get().getVersion());
         return bookRepository.save(bookToUpdate);
     }
 

@@ -1,7 +1,7 @@
 package com.vkeonline.bookstore.catalogservice.web;
 
-import com.vkeonline.bookstore.catalogservice.domain.BookAlreadyExistsException;
-import com.vkeonline.bookstore.catalogservice.domain.BookNotFoundException;
+import com.vkeonline.bookstore.catalogservice.exception.BookAlreadyExistsException;
+import com.vkeonline.bookstore.catalogservice.exception.BookNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;

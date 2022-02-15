@@ -10,7 +10,7 @@ spring:
   application:
     name: catalog-service
   datasource:
-    url: jdbc:mariadb://localhost:3306/catalog?useLegacyDatatimeCode=false&serverTimezone=UTC
+    url: jdbc:mariadb://mariadb-bookstore:3306/catalog?useLegacyDatatimeCode=false&serverTimezone=UTC
     username: mysql
     password: changeme
     driver-class-name: org.mariadb.jdbc.Driver
